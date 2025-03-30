@@ -12,7 +12,7 @@
 	Check the Doc and learn how to use : https://github.com/oileo/Essentials
 	
 	Made by Shinpi (Leonardo Gonçalves)
-	Version : 2
+	Version : 3
 
 	Made in Brazil
 */
@@ -175,7 +175,7 @@ void bubbleSort(int arr[], int n, int val) {
     for (i = 0; i < n - 1; i++) {
         swapped = 0;
         for (j = 0; j < n - i - 1; j++) {
-            if ((crescente && arr[j] > arr[j + 1]) || (!crescente && arr[j] < arr[j + 1])) {
+            if ((val && arr[j] > arr[j + 1]) || (!val && arr[j] < arr[j + 1])) {
                 temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
