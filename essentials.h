@@ -12,5 +12,6 @@ void substring(char s[], char output[], int start, int end);
 void trim(char s[], char output[]);
 void replaceChar(char s[], char letter, char rletter);
 int includes(char s[], char word[]);
+int bubbleSort(int arr[], int n, int crescente);
 
 #endif

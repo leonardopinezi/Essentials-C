@@ -135,6 +135,18 @@ if(includes(str, "Hello") == 1) { // Verify if exist : Return 0 if not exist.
 
 ---
 
+### 📌 bubbleSort(arr, n, val)  
+Sorts an int array using Bubble Sort.
+
+#### Example:  
+```c
+int arr[] = {5, 3, 8, 4, 2};  
+int n = sizeof(arr) / sizeof(arr[0]);
+bubbleSort(arr, n, 0);  // if 0 => descend : else => ascend
+```
+
+---
+
 ## 📜 License
 This project is licensed under the MIT License. Do whatever you want with it, just don’t forget to give me some credit. 😆
 
