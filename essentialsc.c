@@ -198,7 +198,7 @@ int startsWith(char entry[], char character[])
 
 int endsWith(char entry[], char character[])
 {
-	if(entry[length(entry)] == character[length(character)]) {
+	if(entry[length(entry) - 1] == character[length(character)]) {
 		return 0;
 	} else {
 		return 1;
