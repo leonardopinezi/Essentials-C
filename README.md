@@ -5,19 +5,19 @@
 </div>
 
 ## 📌 About
-Essentials is a simple yet useful collection of utility functions written in C. It provides helpful string manipulation functions that can make handling C strings more intuitive. This library is open-source under the MIT license, so feel free to use and modify it. Just don't forget to credit the author! 😆
+Essentials-C is a simple yet useful collection of utility functions written in C. It provides helpful string manipulation functions that can make handling C strings more intuitive. This library is open-source under the MIT license, so feel free to use and modify it. Just don't forget to credit the author! 😆
 
 **Author:** Shinpi (Leonardo Gonçalves)  
 **Version:** 2  
 **Made in:** Brazil  
 
 ## 📥 Installation
-To use Essentials in your project, you need both `essentials.h` and `essentials.c`. Include them in your project directory and then:
+To use Essentials-C in your project, you need both `essentialsc.h` and `essentialsc.c`. Include them in your project directory and then:
 
-1. Add `#include "essentials.h"` in your source file.
-2. Compile your project together with `essentials.c`. Example:
+1. Add `#include "essentialsc.h"` in your source file.
+2. Compile your project together with `essentialsc.c`. Example:
    ```sh
-   gcc main.c essentials.c -o my_program
+   gcc main.c essentialsc.c -o my_program
    ```
 
 ## 📖 Functions and Usage
@@ -153,5 +153,5 @@ This project is licensed under the MIT License. Do whatever you want with it, ju
 ## ⭐ Support
 If you like this project, consider giving it a ⭐ on GitHub!
 
-🔗 **GitHub Repository:** [https://github.com/oileo/Essentials](https://github.com/oileo/Essentials)
+🔗 **GitHub Repository:** [https://github.com/oileo/Essentials](https://github.com/oileo/Essentials-C)
 
