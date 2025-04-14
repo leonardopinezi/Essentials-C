@@ -147,6 +147,30 @@ bubbleSort(arr, n, 0);  // if 0 => descend : else => ascend
 
 ---
 
+### 📌 startsWith(entry, character)  
+Verify if a string starts with a character.
+
+#### Example:  
+```c
+if(startsWith("alfred", "a") == 0) {
+	// Starts with "a"
+}
+```
+
+---
+
+### 📌 endsWith(entry, character)  
+Verify if a string ends with a character.
+
+#### Example:  
+```c
+if(endsWith("alfred", "a") == 0) {
+	// Ends with "a"
+}
+```
+
+---
+
 ## 📜 License
 This project is licensed under the MIT License. Do whatever you want with it, just don’t forget to give me some credit. 😆
 
