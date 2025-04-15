@@ -177,5 +177,5 @@ This project is licensed under the MIT License. Do whatever you want with it, ju
 ## ⭐ Support
 If you like this project, consider giving it a ⭐ on GitHub!
 
-🔗 **GitHub Repository:** [https://github.com/oileo/Essentials](https://github.com/oileo/Essentials-C)
+🔗 **GitHub Repository:** [https://github.com/oileo/Essentials-C](https://github.com/oileo/Essentials-C)
 
