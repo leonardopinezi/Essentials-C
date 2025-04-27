@@ -171,6 +171,45 @@ if(endsWith("alfred", "a") == 0) {
 
 ---
 
+### 📌 uppercase(string, output)  
+Converts a `string` to uppercase and stores it in `output`.
+
+#### Example:  
+```c
+char str[] = "Hello World!";
+char uppercased[13];
+uppercase(str, uppercased);
+printf("%s", uppercased); // Output: HELLO WORLD!
+```
+
+---
+
+### 📌 lowercase(string, output)  
+Converts a `string` to lowercase and stores it in `output`.
+
+#### Example:  
+```c
+char str[] = "Hello World!";
+char lowercased[13];
+lowercase(str, lowercased);
+printf("%s", lowercased); // Output: hello world!
+```
+
+---
+
+### 📌 swapcase(string, output)  
+Swaps the case of characters in a string and stores it in `output`.
+
+#### Example:  
+```c
+char str[] = "Hello World!";
+char swapped[13];
+swapcase(str, swapped);
+printf("%s", swapped); // Output: hELLO wORLD!
+```
+
+---
+
 ## 📜 License
 This project is licensed under the MIT License. Do whatever you want with it, just don’t forget to give me some credit. 😆
 
