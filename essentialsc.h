@@ -15,5 +15,8 @@ int includes(char s[], char word[]);
 void bubbleSort(int arr[], int n, int val);
 int startsWith(char entry[], char character[1]);
 int endsWith(char entry[], char character[]);
+void uppercase(char s[], char output[]);
+void lowercase(char s[], char output[]);
+void swapcase(char s[], char output[]);
 
 #endif

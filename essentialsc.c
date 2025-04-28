@@ -204,3 +204,51 @@ int endsWith(char entry[], char character[])
 		return 1;
 	}
 }
+
+void uppercase(char s[], char output[])
+{
+	if (s == NULL || output == NULL) {
+		return;
+	} else {
+		int i = 0;
+		while (i < length(s)) {
+			output[i] = s[i] >= 'a' && s[i] <= 'z' ? s[i] - 'a' + 'A' : s[i];
+			i++;
+		}
+		output[i] = '\0';
+	}
+}
+
+void lowercase(char s[], char output[])
+{
+	if (s == NULL || output == NULL) {
+		return;
+	} else {
+		int i = 0;
+		while (i < length(s)) {
+			output[i] = s[i] >= 'A' && s[i] <= 'Z' ? s[i] - 'A' + 'a' : s[i];
+			i++;
+		}
+		output[i] = '\0';
+	}
+}
+
+void swapcase(char s[], char output[]) 
+{
+	if (s == NULL || output == NULL) {
+		return;
+	} else {
+		int i = 0;
+		while (i < length(s)) {
+			if (s[i] >= 'A' && s[i] <= 'Z') {
+				output[i] = s[i] - 'A' + 'a';
+			} else if (s[i] >= 'a' && s[i] <= 'z') {
+				output[i] = s[i] - 'a' + 'A';
+			} else {
+				output[i] = s[i];
+			}
+			i++;
+		}
+		output[i] = '\0';
+	}
+}
