@@ -1,7 +1,7 @@
 #ifndef __ESSENTIALS_C_H__
 #define __ESSENTIALS_C_H__
 
-#define ESSENTIALS_C_VERSION 4_0_0
+#define ESSENTIALS_C_VERSION 201
 
 /** Old Names to avoid broke existing projects. */
 #define replaceChar replace_char

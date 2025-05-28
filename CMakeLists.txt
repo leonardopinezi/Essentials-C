@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 set(PROJECT_NAME Essentials-C)
 project(${PROJECT_NAME}
-  VERSION 1.0.0
+  VERSION 2.0.1
   LANGUAGES C)
 
 include(GNUInstallDirs)
