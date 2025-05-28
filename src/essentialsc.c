@@ -23,7 +23,7 @@ void input(char s[], char output[])
 {
   printf("%s", s);
   int i = 0;
-  char c;
+  int c;
 
   while ((c = getchar()) != '\n' && c != EOF) {
     output[i] = c;
