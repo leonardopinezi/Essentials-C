@@ -167,13 +167,13 @@ printf("Trimmed: '%s'\n", trimmed); // Output: 'Hello, World!'
 
 ---
 
-### 📌 replaceChar(string, char, charToReplace)
+### 📌 replace_char(string, char, charToReplace)
 Change a specific character in a string.
 
 #### Example:
 ```c
 char str[] = "Hello, World!";
-replaceChar(str, 'e', 'a');
+replace_char(str, 'e', 'a');
 printf("Message: '%s'\n", str); // Output: 'Hallo, World!'
 ```
 
@@ -193,24 +193,24 @@ if(includes(str, "Hello") == 1) { // Verify if exist : Return 0 if not exist.
 
 ---
 
-### 📌 bubbleSort(arr, n, val)  
+### 📌 bubble_sort(arr, n, val)  
 Sorts an int array using Bubble Sort.
 
 #### Example:  
 ```c
 int arr[] = {5, 3, 8, 4, 2};  
 int n = sizeof(arr) / sizeof(arr[0]);
-bubbleSort(arr, n, 0);  // if 0 => descend : else => ascend
+bubble_sort(arr, n, 0);  // if 0 => descend : else => ascend
 ```
 
 ---
 
-### 📌 startsWith(entry, character)  
+### 📌 starts_with(entry, character)  
 Verify if a string starts with a character.
 
 #### Example:  
 ```c
-if(startsWith("alfred", "a") == 0) {
+if(starts_with("alfred", 'a') == 0) {
 	// Starts with "a"
 }
 ```
@@ -222,7 +222,7 @@ Verify if a string ends with a character.
 
 #### Example:  
 ```c
-if(endsWith("alfred", "a") == 0) {
+if(ends_with("alfred", 'a') == 0) {
 	// Ends with "a"
 }
 ```
