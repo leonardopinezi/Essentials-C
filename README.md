@@ -8,17 +8,75 @@
 Essentials-C is a simple yet useful collection of utility functions written in C. It provides helpful string manipulation functions that can make handling C strings more intuitive. This library is open-source under the MIT license, so feel free to use and modify it. Just don't forget to credit the author! 😆
 
 **Author:** Shinpi (Leonardo Gonçalves)  
-**Version:** 2  
+**Version:** 2.0.1  
 **Made in:** Brazil  
 
 ## 📥 Installation
-To use Essentials-C in your project, you need both `essentialsc.h` and `essentialsc.c`. Include them in your project directory and then:
 
-1. Add `#include "essentialsc.h"` in your source file.
-2. Compile your project together with `essentialsc.c`. Example:
-   ```sh
-   gcc main.c essentialsc.c -o my_program
-   ```
+To use **Essentials-C** in your project, follow these steps:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/leonardopinezi/Essentials-C
+cd Essentials-C
+```
+### 2. Build with CMake.
+
+```bash
+mkdir  build && cd build
+cmake ..
+make
+```
+
+### 3. Install
+
+```bash
+cmake --install .
+# Note: You may need to set CMAKE_INSTALL_PREFIX in some cases.
+```
+
+# 4. Including in Your Project
+
+### Header
+
+To use the library, include the main header in your C source file:
+
+```c
+#include <essentialsc.h>
+```
+
+---
+
+### Using with CMake
+
+Make sure the library is installed and accessible via `CMAKE_PREFIX_PATH` or is located in a standard system directory like `/usr/lib/cmake`.
+
+```cmake
+# Find the installed package
+find_package(Essentials-C REQUIRED)
+
+# Link the library to your target
+target_link_libraries(your_target PRIVATE Essentials-C::Essentials-C)
+```
+
+> **Note:** The `Essentials-C::Essentials-C` target automatically sets include paths.
+
+---
+
+### Using with GCC
+
+If the library is installed in standard system paths:
+
+```bash
+gcc main.c -lEssentials-C -o main
+```
+
+If installed to a custom location:
+
+```bash
+gcc main.c -I/path/to/include -L/path/to/lib -lEssentials-C -o main
+```
 
 ## 📖 Functions and Usage
 
@@ -27,7 +85,7 @@ Returns the length of a given string (excluding the null terminator `\0`).
 
 #### Example:
 ```c
-char str[] = "Hello";
+char* str = "Hello";
 int len = length(str);
 printf("Length: %d\n", len); // Output: Length: 5
 ```
@@ -39,7 +97,7 @@ Prompts the user for input and stores the result in `output`.
 
 #### Example:
 ```c
-char name[50];
+char* name;
 input("Enter your name: ", name);
 printf("Hello, %s!\n", name);
 ```
@@ -51,7 +109,7 @@ Finds the first occurrence of a character in a string and returns its index. Ret
 
 #### Example:
 ```c
-char str[] = "banana";
+char* str = "banana";
 int index = indexof(str, 'n');
 printf("Index of 'n': %d\n", index); // Output: 2
 ```
@@ -63,7 +121,7 @@ Finds the last occurrence of a character in a string and returns its index. Retu
 
 #### Example:
 ```c
-char str[] = "banana";
+char* str = "banana";
 int index = lastindexof(str, 'n');
 printf("Last index of 'n': %d\n", index); // Output: 4
 ```
@@ -75,8 +133,8 @@ Reverses a given string and stores it in `output`.
 
 #### Example:
 ```c
-char str[] = "Hello";
-char rev[10];
+char* str = "Hello";
+char* rev;
 reverse(str, rev);
 printf("Reversed: %s\n", rev); // Output: olleH
 ```
@@ -88,8 +146,8 @@ Extracts a substring from `s` starting at `start` and ending at `end`.
 
 #### Example:
 ```c
-char str[] = "Essentials";
-char sub[10];
+char* str = "Essentials";
+char* sub;
 substring(str, sub, 2, 6);
 printf("Substring: %s\n", sub); // Output: sent
 ```
@@ -101,21 +159,21 @@ Removes leading and trailing spaces from a string.
 
 #### Example:
 ```c
-char str[] = "Hello, World!";
-char trimmed[50];
+char* str = "Hello, World!";
+char* trimmed;
 trim(str, trimmed);
 printf("Trimmed: '%s'\n", trimmed); // Output: 'Hello, World!'
 ```
 
 ---
 
-### 📌 replaceChar(string, char, charToReplace)
+### 📌 replace_char(string, char, charToReplace)
 Change a specific character in a string.
 
 #### Example:
 ```c
-char str[] = "Hello, World!";
-replaceChar(str, 'e', 'a');
+char* str = "Hello, World!";
+replace_char(str, 'e', 'a');
 printf("Message: '%s'\n", str); // Output: 'Hallo, World!'
 ```
 
@@ -126,7 +184,7 @@ Verify if a string have a other string inside.
 
 #### Example:
 ```c
-char str[] = "Hello, World!";
+char* str = "Hello, World!";
 
 if(includes(str, "Hello") == 1) { // Verify if exist : Return 0 if not exist.
 	// Code to execute
@@ -135,24 +193,24 @@ if(includes(str, "Hello") == 1) { // Verify if exist : Return 0 if not exist.
 
 ---
 
-### 📌 bubbleSort(arr, n, val)  
+### 📌 bubble_sort(arr, n, val)  
 Sorts an int array using Bubble Sort.
 
 #### Example:  
 ```c
 int arr[] = {5, 3, 8, 4, 2};  
 int n = sizeof(arr) / sizeof(arr[0]);
-bubbleSort(arr, n, 0);  // if 0 => descend : else => ascend
+bubble_sort(arr, n, 0);  // if 0 => descend : else => ascend
 ```
 
 ---
 
-### 📌 startsWith(entry, character)  
+### 📌 starts_with(entry, character)  
 Verify if a string starts with a character.
 
 #### Example:  
 ```c
-if(startsWith("alfred", "a") == 0) {
+if(starts_with("alfred", 'a') == 0) {
 	// Starts with "a"
 }
 ```
@@ -164,7 +222,7 @@ Verify if a string ends with a character.
 
 #### Example:  
 ```c
-if(endsWith("alfred", "a") == 0) {
+if(ends_with("alfred", 'a') == 0) {
 	// Ends with "a"
 }
 ```
@@ -176,8 +234,8 @@ Converts a `string` to uppercase and stores it in `output`.
 
 #### Example:  
 ```c
-char str[] = "Hello World!";
-char uppercased[13];
+char* str = "Hello World!";
+char* uppercased;
 uppercase(str, uppercased);
 printf("%s", uppercased); // Output: HELLO WORLD!
 ```
@@ -189,8 +247,8 @@ Converts a `string` to lowercase and stores it in `output`.
 
 #### Example:  
 ```c
-char str[] = "Hello World!";
-char lowercased[13];
+char* str = "Hello World!";
+char* lowercased;
 lowercase(str, lowercased);
 printf("%s", lowercased); // Output: hello world!
 ```
@@ -202,8 +260,8 @@ Swaps the case of characters in a string and stores it in `output`.
 
 #### Example:  
 ```c
-char str[] = "Hello World!";
-char swapped[13];
+char* str = "Hello World!";
+char* swapped;
 swapcase(str, swapped);
 printf("%s", swapped); // Output: hELLO wORLD!
 ```
