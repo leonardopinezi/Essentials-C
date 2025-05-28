@@ -9,7 +9,7 @@ include(GNUInstallDirs)
 
 add_library(${PROJECT_NAME}
   src/essentialsc.c
-  include/essentialsc.h)
+  include/essentialsc/essentialsc.h)
 
 target_include_directories(${PROJECT_NAME}
   PUBLIC
@@ -17,7 +17,6 @@ target_include_directories(${PROJECT_NAME}
   $<INSTALL_INTERFACE:include>)
 
 install(TARGETS ${PROJECT_NAME}
-
   EXPORT ${PROJECT_NAME}Targets
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
