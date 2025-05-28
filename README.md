@@ -12,13 +12,71 @@ Essentials-C is a simple yet useful collection of utility functions written in C
 **Made in:** Brazil  
 
 ## 📥 Installation
-To use Essentials-C in your project, you need both `essentialsc.h` and `essentialsc.c`. Include them in your project directory and then:
 
-1. Add `#include "essentialsc.h"` in your source file.
-2. Compile your project together with `essentialsc.c`. Example:
-   ```sh
-   gcc main.c essentialsc.c -o my_program
-   ```
+To use **Essentials-C** in your project, follow these steps:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/leonardopinezi/Essentials-C
+cd Essentials-C
+```
+### 2. Build with CMake.
+
+```bash
+mkdir  build && cd build
+cmake ..
+make
+```
+
+### 3. Install
+
+```bash
+cmake --install .
+# Note: You may need to set CMAKE_INSTALL_PREFIX in some cases.
+```
+
+# 4. Including in Your Project
+
+### Header
+
+To use the library, include the main header in your C source file:
+
+```c
+#include <essentialsc.h>
+```
+
+---
+
+### Using with CMake
+
+Make sure the library is installed and accessible via `CMAKE_PREFIX_PATH` or is located in a standard system directory like `/usr/lib/cmake`.
+
+```cmake
+# Find the installed package
+find_package(Essentials-C REQUIRED)
+
+# Link the library to your target
+target_link_libraries(your_target PRIVATE Essentials-C::Essentials-C)
+```
+
+> **Note:** The `Essentials-C::Essentials-C` target automatically sets include paths.
+
+---
+
+### Using with GCC
+
+If the library is installed in standard system paths:
+
+```bash
+gcc main.c -lEssentials-C -o main
+```
+
+If installed to a custom location:
+
+```bash
+gcc main.c -I/path/to/include -L/path/to/lib -lEssentials-C -o main
+```
 
 ## 📖 Functions and Usage
 

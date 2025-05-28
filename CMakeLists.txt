@@ -1,0 +1,47 @@
+cmake_minimum_required(VERSION 3.10)
+
+include(GNUInstallDirs)
+
+set(PROJECT_NAME Essentials-C)
+project(${PROJECT_NAME}
+  VERSION 1.0.0
+  LANGUAGES C)
+
+add_library(${PROJECT_NAME}
+  src/essentialsc.c
+  include/essentialsc.h)
+
+target_include_directories(${PROJECT_NAME}
+  PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+
+install(TARGETS ${PROJECT_NAME}
+  EXPORT ${PROJECT_NAME}Targets
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+  FILES_MATCHING PATTERN "*.h")
+
+install(EXPORT ${PROJECT_NAME}Targets
+  FILE ${PROJECT_NAME}Targets.cmake
+  NAMESPACE ${PROJECT_NAME}::
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
+
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(
+  "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+  VERSION ${PROJECT_VERSION}
+  COMPATIBILITY AnyNewerVersion)
+
+file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+"include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}Targets.cmake\")\n")
+
+install(FILES
+  "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
