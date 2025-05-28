@@ -85,7 +85,7 @@ Returns the length of a given string (excluding the null terminator `\0`).
 
 #### Example:
 ```c
-char str[] = "Hello";
+char* str = "Hello";
 int len = length(str);
 printf("Length: %d\n", len); // Output: Length: 5
 ```
@@ -97,7 +97,7 @@ Prompts the user for input and stores the result in `output`.
 
 #### Example:
 ```c
-char name[50];
+char* name;
 input("Enter your name: ", name);
 printf("Hello, %s!\n", name);
 ```
@@ -109,7 +109,7 @@ Finds the first occurrence of a character in a string and returns its index. Ret
 
 #### Example:
 ```c
-char str[] = "banana";
+char* str = "banana";
 int index = indexof(str, 'n');
 printf("Index of 'n': %d\n", index); // Output: 2
 ```
@@ -121,7 +121,7 @@ Finds the last occurrence of a character in a string and returns its index. Retu
 
 #### Example:
 ```c
-char str[] = "banana";
+char* str = "banana";
 int index = lastindexof(str, 'n');
 printf("Last index of 'n': %d\n", index); // Output: 4
 ```
@@ -133,8 +133,8 @@ Reverses a given string and stores it in `output`.
 
 #### Example:
 ```c
-char str[] = "Hello";
-char rev[10];
+char* str = "Hello";
+char* rev;
 reverse(str, rev);
 printf("Reversed: %s\n", rev); // Output: olleH
 ```
@@ -146,8 +146,8 @@ Extracts a substring from `s` starting at `start` and ending at `end`.
 
 #### Example:
 ```c
-char str[] = "Essentials";
-char sub[10];
+char* str = "Essentials";
+char* sub;
 substring(str, sub, 2, 6);
 printf("Substring: %s\n", sub); // Output: sent
 ```
@@ -159,8 +159,8 @@ Removes leading and trailing spaces from a string.
 
 #### Example:
 ```c
-char str[] = "Hello, World!";
-char trimmed[50];
+char* str = "Hello, World!";
+char* trimmed;
 trim(str, trimmed);
 printf("Trimmed: '%s'\n", trimmed); // Output: 'Hello, World!'
 ```
@@ -172,7 +172,7 @@ Change a specific character in a string.
 
 #### Example:
 ```c
-char str[] = "Hello, World!";
+char* str = "Hello, World!";
 replace_char(str, 'e', 'a');
 printf("Message: '%s'\n", str); // Output: 'Hallo, World!'
 ```
@@ -184,7 +184,7 @@ Verify if a string have a other string inside.
 
 #### Example:
 ```c
-char str[] = "Hello, World!";
+char* str = "Hello, World!";
 
 if(includes(str, "Hello") == 1) { // Verify if exist : Return 0 if not exist.
 	// Code to execute
@@ -234,8 +234,8 @@ Converts a `string` to uppercase and stores it in `output`.
 
 #### Example:  
 ```c
-char str[] = "Hello World!";
-char uppercased[13];
+char* str = "Hello World!";
+char* uppercased;
 uppercase(str, uppercased);
 printf("%s", uppercased); // Output: HELLO WORLD!
 ```
@@ -247,8 +247,8 @@ Converts a `string` to lowercase and stores it in `output`.
 
 #### Example:  
 ```c
-char str[] = "Hello World!";
-char lowercased[13];
+char* str = "Hello World!";
+char* lowercased;
 lowercase(str, lowercased);
 printf("%s", lowercased); // Output: hello world!
 ```
@@ -260,8 +260,8 @@ Swaps the case of characters in a string and stores it in `output`.
 
 #### Example:  
 ```c
-char str[] = "Hello World!";
-char swapped[13];
+char* str = "Hello World!";
+char* swapped;
 swapcase(str, swapped);
 printf("%s", swapped); // Output: hELLO wORLD!
 ```
