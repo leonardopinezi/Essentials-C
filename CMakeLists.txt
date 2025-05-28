@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
 
-include(GNUInstallDirs)
-
 set(PROJECT_NAME Essentials-C)
 project(${PROJECT_NAME}
   VERSION 1.0.0
   LANGUAGES C)
+
+include(GNUInstallDirs)
 
 add_library(${PROJECT_NAME}
   src/essentialsc.c
@@ -17,6 +17,7 @@ target_include_directories(${PROJECT_NAME}
   $<INSTALL_INTERFACE:include>)
 
 install(TARGETS ${PROJECT_NAME}
+
   EXPORT ${PROJECT_NAME}Targets
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
