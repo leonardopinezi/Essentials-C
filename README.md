@@ -268,6 +268,14 @@ printf("%s", swapped); // Output: hELLO wORLD!
 
 ---
 
+### ramdom
+ramdom int numbers
+#### Example:  
+```c
+int x =ramdom(0,10);
+printf("%i",x); // output ramdom number between 0 and 10
+```
+
 ## 📜 License
 This project is licensed under the MIT License. Do whatever you want with it, just don’t forget to give me some credit. 😆
 
