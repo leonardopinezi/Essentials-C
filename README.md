@@ -272,8 +272,15 @@ printf("%s", swapped); // Output: hELLO wORLD!
 ramdom int numbers
 #### Example:  
 ```c
-int x =ramdom(0,10);
-printf("%i",x); // output ramdom number between 0 and 10
+#include <time.h>
+#include <stdlib.h>
+
+int main() {
+	srand(time(NULL));
+	int x = ramdomInt(0,10);
+	printf("%i\n",x); // output ramdom number between 0 and 10
+	return 0;
+}
 ```
 
 ## 📜 License
