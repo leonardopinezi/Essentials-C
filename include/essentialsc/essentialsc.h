@@ -40,5 +40,7 @@ void uppercase(const cstr in, const cstr out);
 void lowercase(const cstr in, const cstr out);
 
 void swapcase(const cstr in, const cstr out);
-int random(int max, int min);
+
+int randomInr(int max, int min);
+
 #endif
