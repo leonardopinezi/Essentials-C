@@ -1,6 +1,8 @@
 #include "essentialsc/essentialsc.h"
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
   * << ESSENTIALS-C >>
@@ -25,6 +27,7 @@
  * PedroLucaV   (Pedro Lucas)
  * briansantoss (Brian Santos)
  * trindadedev  (Aquiles Trindade)
+ * void dev
  */
 
 void input(const cstr in, cstr output)
@@ -273,6 +276,7 @@ void swapcase(const cstr in, cstr output)
     output[i] = '\0';
   }
 }
- int random(int max, int min){
- int rand() %(max - min +1) +min;
- }
+
+int randomInt(int max, int min) {
+  return rand() %(max - min + 1 ) + min;
+}
