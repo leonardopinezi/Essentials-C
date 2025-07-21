@@ -25,6 +25,7 @@
  * PedroLucaV   (Pedro Lucas)
  * briansantoss (Brian Santos)
  * trindadedev  (Aquiles Trindade)
+ * void dev
  */
 
 void input(const cstr in, cstr output)
