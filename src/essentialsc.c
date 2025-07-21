@@ -273,3 +273,6 @@ void swapcase(const cstr in, cstr output)
     output[i] = '\0';
   }
 }
+ int random(int max, int min){
+ int rand() %(max - min +1) +min;
+ }
