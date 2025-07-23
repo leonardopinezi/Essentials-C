@@ -277,6 +277,8 @@ void swapcase(const cstr in, cstr output)
   }
 }
 
-int randomInt(int max, int min) {
-  return rand() %(max - min + 1 ) + min;
+int random_int(int min, int max)
+{
+  return rand() % (max - min + 1) + min;
+}
 }
