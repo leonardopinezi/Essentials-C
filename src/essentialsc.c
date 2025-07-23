@@ -281,4 +281,51 @@ int random_int(int min, int max)
 {
   return rand() % (max - min + 1) + min;
 }
+
+int is_prefix(const cstr src, const cstr pref)
+{
+  // Early return 0 (false) if either string is NULL
+  if (src == NULL || pref == NULL) return 0;
+  
+  cstr s = src;
+  cstr p = pref;
+
+  // Loop over both strings until either one ends
+  while (*s != '\0' && *p != '\0') {
+    // Early return false if characters do not match
+    if (*s != *p) return 0;
+    // Move to the next character in both strings 
+    s++; p++;
+  }
+
+  // If prefix end was reached, it is indeed a prefix
+  return *p == '\0';
+}
+
+int is_suffix(const cstr src, const cstr suf) 
+{
+  // Early return false if either string is NULL
+  if (src == NULL || suf == NULL) return 0;
+
+  // Get source and suffix strings lengths
+  int sl = length(src);
+  int sfl = length(suf);
+  
+  int start_offset = sl - sfl; 
+  // Suffix string cannot be longer than source
+  if (start_offset < 0) return 0;
+  
+  cstr sf = suf;
+  cstr s = src + start_offset;
+
+  // Loop over both strings until either one ends
+  while (*s != '\0' && *sf != '\0') {
+    // Early return false if characters do not match
+    if (*s != *sf) return 0;
+    // Move to the next character in both strings 
+    s++; sf++; 
+  }
+
+  // If we reached the end of suffix, it is indeed a suffix
+  return *sf == '\0'; 
 }

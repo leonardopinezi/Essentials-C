@@ -284,6 +284,32 @@ int main() {
 }
 ```
 
+---
+
+### 📌 is_prefix(src, pref)
+Verifies whether the string `pref` appears at the **beginning** of the string `src`.
+
+#### Example:  
+```c
+char* str = "Hello World!";
+char* pref = "Hello";
+printf("%d", is_prefix(str, pref)); // Output: 1 (true);
+```
+
+---
+
+### 📌 is_suffix(src, suf);
+Verifies whether the string `pref` appears at the **end** of the string `src`.
+
+#### Example:  
+```c
+char* str = "Hello World!";
+char* suf = "World!";
+printf("%d", is_suffix(str, suf)); // Output: 1 (true);
+```
+
+---
+
 ## 📜 License
 This project is licensed under the MIT License. Do whatever you want with it, just don’t forget to give me some credit. 😆
 
