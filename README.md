@@ -8,7 +8,6 @@
 Essentials-C is a simple yet useful collection of utility functions written in C. It provides helpful string manipulation functions that make working with strings in C a bit more intuitive. This library is open-source under the MIT license, so feel free to use and modify it. Just don't forget to credit the author! 😆
 
 **Author:** Shinpi (Leonardo Gonçalves)  
-**Version:** 2.0.1  
 **Made in:** Brazil  
 
 ## 📥 Installation
@@ -43,7 +42,7 @@ cmake --install .
 To use the library, include the main header in your C source file:
 
 ```c
-#include <essentialsc.h>
+#include <essentialsc/essentialsc.h>
 ```
 
 ---
