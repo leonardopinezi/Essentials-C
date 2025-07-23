@@ -213,20 +213,16 @@ void bubble_sort(int arr[], int n, int val)
 
 int starts_with(const cstr entry, char character)
 {
-  if (entry[0] == character) {
-    return 0;
-  } else {
-    return 1;
-  }
+  // Return 1 (true) if the string is not NULL and starts with the given character, 0 otherwise
+  return entry != NULL && entry[0] == character;
 }
 
 int ends_with(const cstr entry, char character)
 {
-  if (entry[length(entry) - 1] == character) {
-    return 0;
-  } else {
-    return 1;
-  }
+  // Return 1 (true) if the string is not NULL, not empty and ends with the given character, 0 otherwise
+  if (entry == NULL || *entry == '\0') return 0;
+  
+  return entry[length(entry) - 1] == character;
 }
 
 void uppercase(const cstr in, cstr output)
@@ -277,6 +273,55 @@ void swapcase(const cstr in, cstr output)
   }
 }
 
-int randomInt(int max, int min) {
-  return rand() %(max - min + 1 ) + min;
+int random_int(int min, int max)
+{
+  return rand() % (max - min + 1) + min;
+}
+
+int is_prefix(const cstr src, const cstr pref)
+{
+  // Early return 0 (false) if either string is NULL
+  if (src == NULL || pref == NULL) return 0;
+  
+  cstr s = src;
+  cstr p = pref;
+
+  // Loop over both strings until either one ends
+  while (*s != '\0' && *p != '\0') {
+    // Early return false if characters do not match
+    if (*s != *p) return 0;
+    // Move to the next character in both strings 
+    s++; p++;
+  }
+
+  // If prefix end was reached, it is indeed a prefix
+  return *p == '\0';
+}
+
+int is_suffix(const cstr src, const cstr suf) 
+{
+  // Early return false if either string is NULL
+  if (src == NULL || suf == NULL) return 0;
+
+  // Get source and suffix strings lengths
+  int sl = length(src);
+  int sfl = length(suf);
+  
+  int start_offset = sl - sfl; 
+  // Suffix string cannot be longer than source
+  if (start_offset < 0) return 0;
+  
+  cstr sf = suf;
+  cstr s = src + start_offset;
+
+  // Loop over both strings until either one ends
+  while (*s != '\0' && *sf != '\0') {
+    // Early return false if characters do not match
+    if (*s != *sf) return 0;
+    // Move to the next character in both strings 
+    s++; sf++; 
+  }
+
+  // If we reached the end of suffix, it is indeed a suffix
+  return *sf == '\0'; 
 }

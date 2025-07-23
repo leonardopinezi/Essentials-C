@@ -5,7 +5,7 @@
 </div>
 
 ## 📌 About
-Essentials-C is a simple yet useful collection of utility functions written in C. It provides helpful string manipulation functions that can make handling C strings more intuitive. This library is open-source under the MIT license, so feel free to use and modify it. Just don't forget to credit the author! 😆
+Essentials-C is a simple yet useful collection of utility functions written in C. It provides helpful string manipulation functions that make working with strings in C a bit more intuitive. This library is open-source under the MIT license, so feel free to use and modify it. Just don't forget to credit the author! 😆
 
 **Author:** Shinpi (Leonardo Gonçalves)  
 **Version:** 2.0.1  
@@ -21,7 +21,7 @@ To use **Essentials-C** in your project, follow these steps:
 git clone https://github.com/leonardopinezi/Essentials-C
 cd Essentials-C
 ```
-### 2. Build with CMake.
+### 2. Build with CMake
 
 ```bash
 mkdir  build && cd build
@@ -186,7 +186,7 @@ Verify if a string have a other string inside.
 ```c
 char* str = "Hello, World!";
 
-if(includes(str, "Hello") == 1) { // Verify if exist : Return 0 if not exist.
+if(includes(str, "Hello")) { // Verify if exist : Return 0 if not exist.
 	// Code to execute
 }
 ```
@@ -200,29 +200,29 @@ Sorts an int array using Bubble Sort.
 ```c
 int arr[] = {5, 3, 8, 4, 2};  
 int n = sizeof(arr) / sizeof(arr[0]);
-bubble_sort(arr, n, 0);  // if 0 => descend : else => ascend
+bubble_sort(arr, n, 0);  // Sorts in descending order if 0, ascending otherwise
 ```
 
 ---
 
 ### 📌 starts_with(entry, character)  
-Verify if a string starts with a character.
+Verifies if a string starts with a character.
 
 #### Example:  
 ```c
-if(starts_with("alfred", 'a') == 0) {
+if(starts_with("alfred", 'a')) {
 	// Starts with "a"
 }
 ```
 
 ---
 
-### 📌 endsWith(entry, character)  
-Verify if a string ends with a character.
+### 📌 ends_with(entry, character)  
+Verifies if a string ends with a character.
 
 #### Example:  
 ```c
-if(ends_with("alfred", 'a') == 0) {
+if(ends_with("alfred", 'a')) {
 	// Ends with "a"
 }
 ```
@@ -268,20 +268,47 @@ printf("%s", swapped); // Output: hELLO wORLD!
 
 ---
 
-### ramdom
-ramdom int numbers
+### 📌 random_int(min, max) 
+Generates a random integer number in the interval (`min`, `max`).
 #### Example:  
 ```c
 #include <time.h>
 #include <stdlib.h>
 
 int main() {
-	srand(time(NULL));
-	int x = ramdomInt(0,10);
-	printf("%i\n",x); // output ramdom number between 0 and 10
+	srand(time(NULL)); 
+	int x = random_int(0, 10);
+	printf("%d", x); // Output: Random integer number between 0 and 10
+						// 5 is a possible outcome
 	return 0;
 }
 ```
+
+---
+
+### 📌 is_prefix(src, pref)
+Verifies whether the string `pref` appears at the **beginning** of the string `src`.
+
+#### Example:  
+```c
+char* str = "Hello World!";
+char* pref = "Hello";
+printf("%d", is_prefix(str, pref)); // Output: 1 (true);
+```
+
+---
+
+### 📌 is_suffix(src, suf);
+Verifies whether the string `pref` appears at the **end** of the string `src`.
+
+#### Example:  
+```c
+char* str = "Hello World!";
+char* suf = "World!";
+printf("%d", is_suffix(str, suf)); // Output: 1 (true);
+```
+
+---
 
 ## 📜 License
 This project is licensed under the MIT License. Do whatever you want with it, just don’t forget to give me some credit. 😆
@@ -290,4 +317,3 @@ This project is licensed under the MIT License. Do whatever you want with it, ju
 If you like this project, consider giving it a ⭐ on GitHub!
 
 🔗 **GitHub Repository:** [https://github.com/leonardopinezi/Essentials-C](https://github.com/oileo/Essentials-C)
-

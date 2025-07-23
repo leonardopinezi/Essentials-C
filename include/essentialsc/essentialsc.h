@@ -41,6 +41,10 @@ void lowercase(const cstr in, const cstr out);
 
 void swapcase(const cstr in, const cstr out);
 
-int randomInr(int max, int min);
+int random_int(int min, int max);
+
+int is_prefix(const cstr src, const cstr pref);
+
+int is_suffix(const cstr src, const cstr suf);
 
 #endif
