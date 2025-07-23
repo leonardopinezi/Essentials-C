@@ -206,23 +206,23 @@ bubble_sort(arr, n, 0);  // Sorts in descending order if 0, ascending otherwise
 ---
 
 ### 📌 starts_with(entry, character)  
-Verify if a string starts with a character.
+Verifies if a string starts with a character.
 
 #### Example:  
 ```c
-if(starts_with("alfred", 'a') == 0) {
+if(starts_with("alfred", 'a')) {
 	// Starts with "a"
 }
 ```
 
 ---
 
-### 📌 endsWith(entry, character)  
-Verify if a string ends with a character.
+### 📌 ends_with(entry, character)  
+Verifies if a string ends with a character.
 
 #### Example:  
 ```c
-if(ends_with("alfred", 'a') == 0) {
+if(ends_with("alfred", 'a')) {
 	// Ends with "a"
 }
 ```

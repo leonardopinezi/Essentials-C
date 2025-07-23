@@ -213,20 +213,16 @@ void bubble_sort(int arr[], int n, int val)
 
 int starts_with(const cstr entry, char character)
 {
-  if (entry[0] == character) {
-    return 0;
-  } else {
-    return 1;
-  }
+  // Return 1 (true) if the string is not NULL and starts with the given character, 0 otherwise
+  return entry != NULL && entry[0] == character;
 }
 
 int ends_with(const cstr entry, char character)
 {
-  if (entry[length(entry) - 1] == character) {
-    return 0;
-  } else {
-    return 1;
-  }
+  // Return 1 (true) if the string is not NULL, not empty and ends with the given character, 0 otherwise
+  if (entry == NULL || *entry == '\0') return 0;
+  
+  return entry[length(entry) - 1] == character;
 }
 
 void uppercase(const cstr in, cstr output)
