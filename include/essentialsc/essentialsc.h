@@ -47,4 +47,8 @@ int is_prefix(const cstr src, const cstr pref);
 
 int is_suffix(const cstr src, const cstr suf);
 
+int is_number(char *entry);
+
+int get_ascii(char entry);
+
 #endif
