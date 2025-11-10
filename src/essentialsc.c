@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <ctype.h>
 
 /**
   * << ESSENTIALS-C >>
@@ -15,7 +16,7 @@
 
   * Check the Doc and learn how to use : https://github.com/leonardopinezi/Essentials-C
 
-  * Version : 4.0.0
+  * Version : 5.0.0
 
   * Made in Brazil
 */
@@ -324,4 +325,31 @@ int is_suffix(const cstr src, const cstr suf)
 
   // If we reached the end of suffix, it is indeed a suffix
   return *sf == '\0'; 
+}
+
+int is_number(char *entry)
+{
+  // Verify if it's a empty string
+  if(entry[0] == '\0') return 0;
+
+  int l = 0;
+  // Verify if it's a negative number
+  if(entry[0] == '-') {
+    l++;
+    // Return zero if it's only a "-"
+    if(entry[l] == '\0') return 0;
+  }
+
+  // Simple parser
+  while(entry[l] != '\0') {
+    if(!isdigit(entry[l])) return 0;
+    l++;
+  }
+
+  // Its only numbers
+  return 1;
+}
+
+int get_ascii(char entry) {
+  return (int)entry;
 }
