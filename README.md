@@ -309,6 +309,34 @@ printf("%d", is_suffix(str, suf)); // Output: 1 (true);
 
 ---
 
+### 📌 is_number(entry);
+Verifies if the string `entry` only have numbers.
+
+#### Example:  
+```c
+char* str  = "123456";
+char* str1 = "-12345";
+char* str3 = "12a345";
+char* str4 = "12a3-5";
+
+printf("%d", is_number(str));  // Output: 1 (true);
+printf("%d", is_number(str1)); // Output: 1 (true);
+printf("%d", is_number(str2)); // Output: 0 (false);
+printf("%d", is_number(str3)); // Output: 0 (false);
+```
+
+---
+
+### 📌 get_ascii(entry);
+Return the numeric ascii value from char `entry`.
+
+#### Example:  
+```c
+printf("%d", get_ascii('A')); // Output: 65
+```
+
+---
+
 ## 📜 License
 This project is licensed under the MIT License. Do whatever you want with it, just don’t forget to give me some credit. 😆
 
